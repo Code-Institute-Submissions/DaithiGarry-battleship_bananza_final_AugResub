@@ -105,7 +105,7 @@ def RunBattleshipBananza():
       turns -= 1
       print(f"You have {turns} turns remaining")
       if turns == 0:
-        print("Sorry, you luck just ran out")
+        print("Sorry, you luck just ran out!")
         GameBoard.print_board(user_guess_board)
         break
    
