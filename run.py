@@ -1,6 +1,6 @@
-    import random
+import random
 
-    class GameBoard:
+class GameBoard:
         def __init__(self, board):
         self.board = board
 
@@ -29,7 +29,7 @@
             number += 1
         print("+ - - - - - - +")
 
-    class Battleship:
+class Battleship:
         def __init__(self, board):
         self.board = board
 
@@ -107,6 +107,6 @@
             break
     
 
-    if __name__ == '__main__':
+if __name__ == '__main__':
     
     RunBattleshipBananza()
