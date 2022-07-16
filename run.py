@@ -98,7 +98,7 @@ def RunBattleshipBananza():
       print("You missed my battleship!")
       user_guess_board.board[user_guess_row][user_guess_column] = "X"
     """win/lose check """
-    if Battleship.ships_you_hit(user_guess_board) == 5:
+    if Battleship.count_ships_you_hit(user_guess_board) == 5:
       print("You hit all 5 battleships!")
       break
     else:
