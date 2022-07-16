@@ -46,18 +46,18 @@
             an existing row (x) and column (y) to insure the 
             instructions to the program are valid."""
         try:
-        guess_row = input("Enter the row of the ship: e.g. 123 ")
+        guess_row = input("Enter the row of the ship: e.g. 123\n ")
         while guess_row not in '123456':
             print('Cannot place ship here, please select a row')
-            guess_row = input("Enter the row of the ship: e.g. 123 ")
+            guess_row = input("Enter the row of the ship: e.g. 123\n  ")
 
-        guess_column = input("Enter the column of the ship: e.g. ABC ").upper()
+        guess_column = input("Enter the column of the ship: e.g. ABC\n  ").upper()
         while guess_column not in "ABCDEF":
-            print("Cannot place ship here, please select a column")
-            guess_column = input("Enter the column of the ship: e.g. ABC ").upper()
+            print("Cannot place ship here, please select a column\n ")
+            guess_column = input("Enter the column of the ship: e.g. ABC\n  ").upper()
         return int(guess_row) - 1, GameBoard.get_letters_to_numbers()[guess_column]
         except ValueError and KeyError:
-        print("Input is not valid")
+        print("Input is not valid\n ")
         return self.get_user_input()
 
     def count_ships_you_hit(self):
