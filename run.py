@@ -73,3 +73,42 @@ class Battleship:
         if column == "S":
           ships_you_hit += 1
     return ships_you_hit
+
+def RunBattleshipBananza(): 
+  print("Welcome to BattleShip Bonanza!")
+  print("You have 10 shots to sink 5 enemy battleships!")  
+  computer_board = GameBoard([[" "] * 6 for i in range(6)])
+  user_guess_board = GameBoard([[" "] * 6 for i in range(6)])
+  Battleship.create_ships_on_board(computer_board)
+  """You have 10 turns to sink the computer battleships"""
+  turns = 10
+  while turns > 0:
+    GameBoard.print_board(user_guess_board)
+    user_guess_row, user_guess_column = Battleship.get_user_input(object)
+    """duplicate check"""
+    while user_guess_board.board[user_guess_row][user_guess_column] == "X" or user_guess_board.board[user_guess_row][user_guess_column] == "S":
+      print("You guessed that one already")
+      user_guess_row, user_guess_column = Battleship.get_user_input(object)
+    """hit/miss check"""
+    if computer_board.board[user_guess_row][user_guess_column] == "S":
+      print("You sunk my battleship!")
+      user_guess_board.board[user_guess_row][user_guess_column] = "S"
+    else:
+      print("You missed my battleship!")
+      user_guess_board.board[user_guess_row][user_guess_column] = "X"
+    """win/lose check """
+    if Battleship.ships_you_hit(user_guess_board) == 5:
+      print("You hit all 5 battleships!")
+      break
+    else:
+      turns -= 1
+      print(f"You have {turns} turns remaining")
+      if turns == 0:
+        print("Sorry, you luck just ran out")
+        GameBoard.print_board(user_guess_board)
+        break
+   
+
+if __name__ == '__main__':
+ 
+  RunBattleshipBananza()
