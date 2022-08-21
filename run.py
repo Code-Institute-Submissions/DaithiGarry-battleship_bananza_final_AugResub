@@ -1,5 +1,6 @@
 import random
 
+
 class GameBoard:
     def __init__(self, board):
         self.board = board
@@ -64,22 +65,15 @@ class Battleship:
             guess_row = input("Enter the row of the ship: e.g. 123 ")
             while guess_row not in '123456' or guess_row == "":
                     print('Cannot place ship here, please select a row')
-                    guess_row = input("Enter the row of the ship: e.g. 123 ")
-                       
+                    guess_row = input("Enter the row of the ship: e.g. 123")
             guess_column = input("Enter the column of the ship: e.g. ABC ").upper()
             while guess_column not in "ABCDEF" or guess_column == "":
                     print("Cannot place ship here, please select a column")
-                    guess_column = input("Enter the column of the ship: e.g. ABC ").upper()    
-            return int(guess_row) -1, GameBoard.get_letters_to_numbers()[guess_column]
-            
+                    guess_column = input("Enter the column of the ship: e.g. ABC ").upper()
+            return int(guess_row) - 1, GameBoard.get_letters_to_numbers()[guess_column]
         except ValueError as err:
             print("Input is not valid")
             return self.get_user_input()
-    
-       
-        
-            
-       
 
     def count_ships_you_hit(self):
         """
@@ -108,7 +102,7 @@ def RunBattleshipBananza():
         """duplicate check"""
         while user_guess_board.board[user_guess_row][user_guess_column] == "X" or user_guess_board.board[user_guess_row][user_guess_column] == "S":
             print("You guessed that one already")
-            user_guess_row, user_guess_column = Battleship().get_user_input()
+            user_guess_row, user_guess_column = Battleship.get_user_input(object)
             """hit/miss check"""
         if computer_board.board[user_guess_row][user_guess_column] == "S":
             print("You sunk my battleship!")
@@ -127,7 +121,6 @@ def RunBattleshipBananza():
                 print("Sorry, your luck just ran out!")
                 GameBoard.print_board(user_guess_board)
                 break
-          
 
 
 if __name__ == '__main__':

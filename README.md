@@ -28,9 +28,33 @@ In this version, a single player will attempt to sink 5 battleships which the co
 - Accepts user inputs
 - Input validation and error-checking
     - A player in unable to guess the same location twice during the same game.
-    - A Player can only guess within a define grid
 
-![guessing errors](/assets/images/errors%20.png)
+
+![position already guessed](/assets/images/position%20already%20guessed.png)
+
+
+    - A Player can only guess within a define grid row/column
+
+Row - the image below shows the row 9 being selected, which is outside the grid range of 1-6.
+
+![row position not on grid](/assets/images/row%20position%20not%20on%20the%20board.png)
+
+Column - the image below shows the column u being selected, which is outside the grid range of A-F. 
+
+![column position not on grid](/assets/images/column%20position%20not%20on%20the%20board.png)
+
+    - A player cannot enter a blank space for row or column position
+
+Row - blank input entry for row selection shows program does not crash 
+
+![blank entry for row position](/assets/images/blank%20input%20for%20battlesip%20board%20row%20selection.png)
+
+
+Column - blank input entry for column selection shows program does not crash 
+
+![Blank entry for column position](/assets/images/blank%20input%20for%20battlesip%20board%20column%20selection.png)
+
+
 
 - Date in maintained in classes
 
@@ -59,14 +83,15 @@ The project has been manually tested via the following:
 - Before final deployment a new file was created to clean out indentation errors from the file when opening in Heroku app.
 - A new set of images were created for the readme file as during the copy/paste to the file, a file name issue created a text overlap in the readme file which hid text from view. A new set of images were copy/pasted an now file is aligned correctly.
 ### Solved Bugs
-App would not deploy due to indentation error. This was fixed by creating a new file.
-
+The user blank input issue has been resolved via adding "" to the list of unacceptable inputs by the user as seen below, highlighted in yellow.
+![user blank space input bug fix](/assets/images/bug%20fix%20for%20blank%20space.png)
 ### Remaining bugs
 - No bugs remaining
 
 ## Validator Testing
 - PEP8
-  - No major errors were returned other than indentation, line length and spacing from PEP8online.com
+  - No major errors were returned other than line length PEP8online.com
+  ![PEP8 online results](/assets/images/PEP8%20online%20results.png)
 
 ## Deployment
 
