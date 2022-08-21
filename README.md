@@ -95,7 +95,7 @@ The user blank input issue has been resolved via adding "" to the list of unacce
 
 ## Deployment
 
-This project was deployed to Heroku
+This project was deployed to Heroku originally. The new update has been manualy deployed since the recent updates on the 21AUG2022
 This project was deployed to github
 
 ## Credit
